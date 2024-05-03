@@ -1,0 +1,39 @@
+<div class="container">
+  <!-- Select Collaborator -->
+  <div class="form-container">
+    <div class="box">
+      <h2>Create a Holiday</h2>
+      <label for="startDate">Select a Colaborator:</label>
+      <select [(ngModel)]="selectedCollaborator">
+        <option *ngFor="let collaborator of collaborators" [ngValue]="collaborator">{{ collaborator.id }} - {{ collaborator.name }}</option>
+      </select>
+      <br>
+      <label for="startDate">Start Date:</label>
+      <input type="date" id="startDate" name="startDate" [(ngModel)]="startDate" required>
+      <br>
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" name="endDate" [(ngModel)]="endDate" required>
+      <br>
+      <button (click)="createHoliday()">Submit</button>
+    </div>
+  </div>
+
+  <div class="fetch-list-container">
+    <div class="box">
+      <h2>Holidays</h2>
+      <!-- Search bar -->
+      <input type="text" class="search-bar" placeholder="Search Holidays" [(ngModel)]="searchTerm" (input)="searchProjects()">
+      <!-- Fetch button -->
+      <button class="fetch-button" (click)="fetchItems()">Fetch Projects</button>
+      <!-- Projects list -->
+      <div *ngIf="filteredItems.length > 0" class="projects-list">
+        <ul>
+          <li *ngFor="let item of filteredItems" class="project-item">
+            <span class="project-name">{{ item.name }}</span> - <span class="project-startDate">Start Date: {{ item.startDate }}</span> - <span class="project-endDate">End Date: {{ item.endDate }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

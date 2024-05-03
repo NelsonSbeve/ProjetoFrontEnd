@@ -1,0 +1,39 @@
+<div class="container">
+  <!-- Create Project Form -->
+  <div class="form-container">
+    <div class="box">
+      <h2>Create a Project</h2>
+      <form (submit)="createNewItem(form.value)" #form="ngForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required ngModel>
+        <br>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required ngModel>
+        <br>
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" required ngModel>
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+  <!-- Fetch Projects Section -->
+  <div class="fetch-list-container">
+    <div class="box">
+      <h2>Projects</h2>
+      <!-- Search bar -->
+      <input type="text" class="search-bar" placeholder="Search projects" [(ngModel)]="searchTerm" (input)="searchProjects()">
+      <!-- Fetch button -->
+      <button class="fetch-button" (click)="fetchItems()">Fetch Projects</button>
+      <!-- Projects list -->
+      <div *ngIf="filteredItems.length > 0" class="projects-list">
+        <ul>
+          <li *ngFor="let item of filteredItems" class="project-item">
+            <span class="project-name">{{ item.name }}</span> - <span class="project-startDate">Start Date: {{ item.startDate }}</span> - <span class="project-endDate">End Date: {{ item.endDate }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

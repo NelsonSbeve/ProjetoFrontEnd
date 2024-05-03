@@ -1,0 +1,6 @@
+<div class="game-board">
+  <div class="snake" *ngFor="let segment of snake" [style.left.px]="segment.x" [style.top.px]="segment.y"></div>
+  <div class="fruit" *ngFor="let fruit of fruits" [style.left.px]="fruit.x" [style.top.px]="fruit.y"></div>
+  <div class="game-over-overlay" *ngIf="gameOver">Game Over!</div>
+  <div class="score">Score: {{ score }}</div>
+</div>

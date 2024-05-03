@@ -1,0 +1,9 @@
+<div class="game-container">
+  <div class="paddle" [style.left.px]="paddleX"></div>
+  <div class="ball" [style.top.px]="ballY" [style.left.px]="ballX"></div>
+  <div *ngFor="let brick of bricks" class="brick" [style.top.px]="brick.y" [style.left.px]="brick.x" [ngStyle]="{'background-color': brick.color}"></div>
+</div>
+<div class="info">
+  <span>Score: {{ score }}</span>
+  <button (click)="startGame()">Start</button>
+</div>

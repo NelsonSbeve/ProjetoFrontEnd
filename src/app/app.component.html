@@ -1,0 +1,18 @@
+<div class="page-wrapper" [ngClass]="{'night-mode': isNightMode}">
+
+  <a href="/" class="title-link">
+    <h1>{{ title }}</h1>
+  </a>
+  <nav>
+    <button (click)="navigateToProjetos()">Go to ProjetosPage</button>
+    <button (click)="navigateToHolidays()">Go to HolidaysPage</button>
+    <button (click)="navigateToColaborators()">Go to Colaborators</button>
+  </nav>
+  <router-outlet></router-outlet>
+
+
+  <button class="bottom-button" (click)="toggleNightMode()">Toggle Night Mode</button>
+  <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0&pp=ygUJcmljayByb2xs" class="hidden-bottom-button" target="_blank">FunTime</a>
+  <button class="hidden-bottom-button2" (click)="GoToGame()">FunFunTime</button>
+  <button class="hidden-bottom-button3" (click)="GoToGame2()">MostFun?</button>
+</div>

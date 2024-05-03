@@ -1,0 +1,14 @@
+.night-mode {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+h1, nav {
+  margin: 0;
+  padding: 0;
+}
+
