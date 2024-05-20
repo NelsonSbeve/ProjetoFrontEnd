@@ -1,8 +1,8 @@
+import { ColaboratorsComponent } from './colaborators.component';
+import Spy = jasmine.Spy;
+import { ApiService } from '../api.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { ColaboratorsComponent } from './colaborators.component';
-import { ApiService } from '../api.service';
-import Spy = jasmine.Spy;
 
 describe('ColaboratorsComponent', () => {
   let component: ColaboratorsComponent;
